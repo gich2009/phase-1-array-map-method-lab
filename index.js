@@ -12,19 +12,17 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-    let tutorialsCopy = [];
-    let tutorialsSentenceArray = [];
-  
+  let tutorialsCopy = [];
+    
+  let tutorialsSentenceArray = [];
   
   for (let sentence of tutorials){
     tutorialsSentenceArray.push(sentence.split(/\s+/g));
   }
+
+  tutorialsCopy = tutorialsSentenceArray.map(capitalizeEachWord);
   
-  
-  for (let sentence of tutorialsSentenceArray){
-    tutorialsCopy.push(capitalizeEachWord(sentence));
-  }
-    return tutorialsCopy;
+  return tutorialsCopy;
 }
 
 function capitalizeEachWord(sentence){
@@ -38,3 +36,8 @@ function capitalizeEachWord(sentence){
     
   return capitalizedSentence;
 }
+
+
+// for (let sentence of tutorialsSentenceArray){
+  //   tutorialsCopy.push(capitalizeEachWord(sentence));
+  // }
